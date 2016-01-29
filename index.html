@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniProt styling framework</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/docs.css">
+  </head>
+  <body>
+    <div class="large-12 columns">
+    <h1>Welcome to the UniProt styling framework</h1>
+    <p class="lead">
+      This style guide for <a href="http://www.uniprot.org">UniProt</a> is based on the <a href="http://foundation.zurb.com/">Zurb Foundation</a> framework.
+    </p>
+
+    <hr>
+    </div>
+    
+    <div class="row">
+      <div class="large-9 columns" id="docs">
+        <h2 id="typography" data-magellan-target="typography">Typography</h2>
+        <div class="large-12 columns callout">
+          <h1>h1. Title</h1>
+          <h2>h2. Title</h2>
+          <h3>h3. Title</h3>
+          <h4>h4. Title</h4>
+          <h5>h5. Title</h5>
+          <h6>h6. Title</h6>
+        </div>
+
+        <div class="large-12 columns callout">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a convallis libero. Vivamus ut risus non nibh commodo suscipit vel eu risus. Mauris euismod, dui ac dictum fermentum, velit justo accumsan lacus, id accumsan dui sapien ac nisi. In in ipsum felis. Morbi id ipsum tincidunt, fringilla sapien sit amet, vulputate augue. Nam et leo fermentum, dignissim augue tempor, lobortis massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ut neque ornare, dictum nisi sed, accumsan felis. Aenean id quam placerat, gravida felis id, ultricies metus. Aliquam sem sapien, dapibus imperdiet faucibus quis, dictum a sem.</p>
+        </div>
+
+        <hr>
+        <h2 id="grid" data-magellan-target="grid">Here&rsquo;s your basic grid:</h2>
+        <!-- Grid Example -->
+
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="primary callout">
+              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 medium-6 columns">
+            <div class="primary callout">
+              <p>Six columns</p>
+            </div>
+          </div>
+          <div class="large-6 medium-6 columns">
+            <div class="primary callout">
+              <p>Six columns</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="primary callout">
+              <p>Four columns</p>
+            </div>
+          </div>
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="primary callout">
+              <p>Four columns</p>
+            </div>
+          </div>
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="primary callout">
+              <p>Four columns</p>
+            </div>
+          </div>
+        </div>
+        
+        <hr />
+                
+        <h2 id="form" data-magellan-target="form">We bet you&rsquo;ll need a form somewhere:</h2>
+        <form>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Input Label</label>
+              <input type="text" placeholder="large-12.columns" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-4 medium-4 columns">
+              <label>Input Label</label>
+              <input type="text" placeholder="large-4.columns" />
+            </div>
+            <div class="large-4 medium-4 columns">
+              <label>Input Label</label>
+              <input type="text" placeholder="large-4.columns" />
+            </div>
+            <div class="large-4 medium-4 columns">
+              <div class="row collapse">
+                <label>Input Label</label>
+                <div class="input-group">
+                  <input type="text" placeholder="small-9.columns" class="input-group-field" />
+                  <span class="input-group-label">.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Select Box</label>
+              <select>
+                <option value="husker">Husker</option>
+                <option value="starbuck">Starbuck</option>
+                <option value="hotdog">Hot Dog</option>
+                <option value="apollo">Apollo</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Choose Your Favorite</label>
+              <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+              <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+            </div>
+            <div class="large-12 columns">
+              <label>Check these out</label>
+              <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+              <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Textarea Label</label>
+              <textarea placeholder="small-12.columns"></textarea>
+            </div>
+          </div>
+        </form>
+
+        <hr />
+
+        <h2 id="buttons" data-magellan-target="buttons">Try one of these buttons:</h2>
+        <p><a href="#" class="button">Simple Button</a><br/>       
+        <a href="#" class="success button">Success Btn</a><br/>
+        <a href="#" class="alert button">Alert Btn</a><br/>
+        <a href="#" class="secondary button">Secondary Btn</a></p>
+
+      </div>     
+
+      <div class="large-3 columns docs-nav" data-sticky-container>
+       <nav class="columns sticky" data-sticky data-anchor="docs" data-sticky-on="large">
+          <ul class="vertical menu" data-magellan>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#form">Form</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/what-input.js"></script>
+    <script src="bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
