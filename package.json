@@ -1,15 +1,16 @@
 {
-  "name": "foundation-sites-template",
-  "version": "1.0.0",
-  "description": "Basic template for a new Foundation for Sites project.",
+  "name": "uniprot-style",
+  "version": "0.0.1",
+  "description": "UniProt style guide",
   "main": "gulpfile.js",
   "devDependencies": {
     "browser-sync": "^2.11.1",
-    "connect-modrewrite": "^0.8.5",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-bower-files": "^0.2.7",
     "gulp-load-plugins": "^1.1.0",
-    "gulp-sass": "^2.1.0"
+    "gulp-sass": "^2.2.0",
+    "gulp-util": "^3.0.7"
   },
   "scripts": {
     "start": "gulp",
@@ -17,13 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zurb/foundation-sites-template.git"
+    "url": "https://github.com/ebi-uniprot/uniprot-style"
   },
   "bugs": {
-    "url": "https://github.com/zurb/foundation-sites/issues",
-    "email": "foundation@zurb.com"
+    "url": "https://github.com/ebi-uniprot/uniprot-style/issues",
+    "email": "xwatkins@ebi.ac.uk"
   },
-  "author": "ZURB <foundation@zurb.com>",
+  "author": "Xavier Watkins <xwatkins@ebi.ac.uk>",
   "license": "MIT",
   "private": true,
   "dependencies": {

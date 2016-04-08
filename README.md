@@ -1,48 +1,25 @@
-# Foundation for Sites Template
+# UniProt style guide
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
-
-This is the basic starter project for [Foundation for Sites 6](http://foundation.zurb.com/sites). It includes a Sass compiler and a starter HTML file for you.
+This is the living style guide for the UniProt website. It is based on [Foundation for Sites 6](http://foundation.zurb.com/sites).
 
 ## Installation
 
-To use this template, your computer needs:
+To use this, your computer needs:
 
 - [NodeJS](https://nodejs.org/en/) (0.10 or greater)
 - [Git](https://git-scm.com/)
+- [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
+### Running the style guide
 
-### Using the CLI
-
-Install the Foundation CLI with this command:
-
-```bash
-npm install foundation-cli --global
-```
-
-Use this command to set up a blank Foundation for Sites project with this template:
+The following command runs the server:
 
 ```bash
-foundation new --framework sites --template basic
+gulp serve
 ```
 
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
+It uses [BrowserSync](https://www.browsersync.io/) so you can access it from multiple devices at once. The SASS files is recompiled automatically and BrowserSync handles the browser reload.
 
-### Manual Setup
 
-To manually set up the template, first download it with Git:
-
-```bash
-git clone https://github.com/zurb/foundation-sites-template projectname
-```
-
-Then open the folder in your command line, and install the needed dependencies:
-
-```bash
-cd projectname
-npm install
-bower install
-```
-
-Finally, run `npm start` to run the Sass compiler. It will re-run every time you save a Sass file.
+### Building the style guide
+TBD
