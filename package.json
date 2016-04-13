@@ -3,14 +3,22 @@
   "version": "0.0.1",
   "description": "UniProt style guide",
   "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-autoprefixer": "^3.1.0"
+  },
   "devDependencies": {
     "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0",
+    "gulp": "3.9.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-bower-files": "^0.2.7",
-    "gulp-load-plugins": "^1.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.0",
     "gulp-sass": "^2.2.0",
-    "gulp-util": "^3.0.7"
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "wiredep": "^4.0.0"
   },
   "scripts": {
     "start": "gulp",
@@ -26,8 +34,5 @@
   },
   "author": "Xavier Watkins <xwatkins@ebi.ac.uk>",
   "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "gulp-autoprefixer": "^3.1.0"
-  }
+  "private": true
 }
