@@ -82,8 +82,9 @@ gulp.task('js:uniprot-style', function() {
     }));
 });
 
-gulp.task('cp-foundation-js', function() {
-  gulp.src('bower_components/foundation-sites/dist/foundation.min.js')
+gulp.task('cp-node_modules-js', function() {
+  gulp.src(['node_modules/foundation-sites/dist/foundation.min.js',
+'node_modules/jquery/dist/jquery.min.js'])
       .pipe(gulp.dest('build/scripts/uniprot-style/'))
       .pipe(gulp.dest('dist'));
 });
@@ -99,7 +100,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('serve', ['sass:uniprot-style', 'sass:app', 'js:uniprot-style',
-'js:app', 'html', 'cp-foundation-js'], function() {
+'js:app', 'html', 'cp-node_modules-js'], function() {
   browserSync.init({
     server: "./build"
   });
