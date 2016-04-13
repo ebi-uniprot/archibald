@@ -9,10 +9,9 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps');
 
-
 var sassPaths = [
-  'bower_components/foundation-sites/scss',
-  'bower_components/motion-ui/src'
+  'node_modules/foundation-sites/scss',
+  'node_modules/motion-ui/src'
 ];
 
 gulp.task('sass:app', function() {
@@ -45,6 +44,7 @@ gulp.task('sass:uniprot-style', function() {
     .pipe(cleanCss())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/css/'))
+    .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 });
 
@@ -53,11 +53,13 @@ gulp.task('js:app', function() {
   return gulp.src('app/scripts/app/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
-    .pipe(jshint())
+    .pipe(jshint({
+      'devel':true
+    }))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build/scripts/'))
+    .pipe(gulp.dest('build/scripts/app'))
     .pipe(browserSync.reload({
       stream: true,
       once: true
@@ -72,11 +74,18 @@ gulp.task('js:uniprot-style', function() {
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build/scripts/'))
+    .pipe(gulp.dest('build/scripts/uniprot-style'))
+    .pipe(gulp.dest('dist'))
     .pipe(browserSync.reload({
       stream: true,
       once: true
     }));
+});
+
+gulp.task('cp-foundation-js', function() {
+  gulp.src('bower_components/foundation-sites/dist/foundation.min.js')
+      .pipe(gulp.dest('build/scripts/uniprot-style/'))
+      .pipe(gulp.dest('dist'));
 });
 
 // move html
@@ -89,24 +98,8 @@ gulp.task('html', function() {
     }));
 });
 
-// inject bower components
-gulp.task('wiredep', function() {
-  var wiredep = require('wiredep').stream;
-  gulp.src('app/styles/*.scss')
-    .pipe(wiredep({
-      directory: 'app/bower_components'
-    }))
-    .pipe(gulp.dest('app/styles'));
-  gulp.src('app/*.html')
-    .pipe(wiredep({
-      directory: 'app/bower_components',
-      exclude: ['bootstrap-sass-official']
-    }))
-    .pipe(gulp.dest('app'));
-});
-
 gulp.task('serve', ['sass:uniprot-style', 'sass:app', 'js:uniprot-style',
-'js:app', 'html'], function() {
+'js:app', 'html', 'cp-foundation-js'], function() {
   browserSync.init({
     server: "./build"
   });
@@ -117,5 +110,7 @@ gulp.task('watch', ['serve'], function() {
   gulp.watch('app/*.html', ['html']);
   gulp.watch('app/scss/**/*.scss', ['sass:uniprot-style', 'sass:app']);
   gulp.watch('app/scripts/**/*.js', ['js:uniprot-style','js:app']);
-  gulp.watch('bower.json', ['wiredep']);
 });
+
+
+// gulp.task('build')

@@ -4,7 +4,9 @@
   "description": "UniProt style guide",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp-autoprefixer": "^3.1.0"
+    "crossroads": "^0.12.2",
+    "foundation-sites": "^6.2.1",
+    "motion-ui": "^1.2.2"
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",
@@ -17,8 +19,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "jshint": "^2.9.1",
-    "jshint-stylish": "^2.1.0",
-    "wiredep": "^4.0.0"
+    "jshint-stylish": "^2.1.0"
   },
   "scripts": {
     "start": "gulp",
