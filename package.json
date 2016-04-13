@@ -22,8 +22,7 @@
     "jshint-stylish": "^2.1.0"
   },
   "scripts": {
-    "start": "gulp",
-    "build": "gulp sass"
+    "start": "gulp watch"
   },
   "repository": {
     "type": "git",
