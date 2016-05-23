@@ -1,5 +1,47 @@
-.docs-nav {
-	.active {
-		font-weight: bold;
+$light-grey : #CCC;
+$black: #000;
+$white: #FFF;
+$small-text: 16px;
+
+.pattern-element {
+	.pattern-element-header {
+		border-bottom: 1px solid $light-grey;
+		margin-top: 0;
 	}
+}
+
+.archibald-nav {
+	list-style: none;
+	padding-left: 0;
+	font-size: $small-text;
+	h4 {
+		margin: .2em;
+	}
+	ul {
+		list-style: none;
+		padding-left: .5em;
+		margin-bottom: .5em;
+		li a {
+			display: block;
+		}
+	}
+}
+
+.code-snippet {
+	background-color: $black;
+	font-size: $small-text;
+	color:$white;
+	border-radius: 1em;
+	padding: .5em 1em;
+}
+
+.left-col {
+	vertical-align: top;
+	display: inline-block;
+	width: 20%;
+}
+.right-col {
+	vertical-align: top;
+	display: inline-block;
+	width: 70%;
 }

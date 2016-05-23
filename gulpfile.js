@@ -7,7 +7,10 @@ var gulp = require('gulp'),
   cleanCss = require('gulp-clean'),
   autoprefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
+  source = require('vinyl-source-stream');
+  buffer = require('vinyl-buffer');
   sourcemaps = require('gulp-sourcemaps');
+  browserify = require('browserify');
 
 var sassPaths = [
   'node_modules/foundation-sites/scss',
@@ -50,12 +53,14 @@ gulp.task('sass:uniprot-style', function() {
 
 // transpile & move js
 gulp.task('js:app', function() {
-  return gulp.src('app/scripts/app/**/*.js')
+  var b = browserify({
+      debug:true
+    });
+  b.add('app/scripts/app/app.js');
+  return b.bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
     .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
-    .pipe(jshint({
-      'devel':true
-    }))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(uglify())
     .pipe(sourcemaps.write())
@@ -82,13 +87,6 @@ gulp.task('js:uniprot-style', function() {
     }));
 });
 
-gulp.task('cp-node_modules-js', function() {
-  gulp.src(['node_modules/foundation-sites/dist/foundation.min.js',
-'node_modules/jquery/dist/jquery.min.js'])
-      .pipe(gulp.dest('build/scripts/uniprot-style/'))
-      .pipe(gulp.dest('dist'));
-});
-
 // move html
 gulp.task('html', function() {
   return gulp.src('app/**/*.html')
@@ -100,7 +98,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('serve', ['sass:uniprot-style', 'sass:app', 'js:uniprot-style',
-'js:app', 'html', 'cp-node_modules-js'], function() {
+'js:app', 'html'], function() {
   browserSync.init({
     server: "./build"
   });
@@ -108,7 +106,7 @@ gulp.task('serve', ['sass:uniprot-style', 'sass:app', 'js:uniprot-style',
 
 gulp.task('watch', ['serve'], function() {
   // watch for changes
-  gulp.watch('app/*.html', ['html']);
+  gulp.watch('app/**/*.html', ['html']);
   gulp.watch('app/scss/**/*.scss', ['sass:uniprot-style', 'sass:app']);
   gulp.watch('app/scripts/**/*.js', ['js:uniprot-style','js:app']);
 });
