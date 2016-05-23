@@ -11,6 +11,7 @@ var gulp = require('gulp'),
   buffer = require('vinyl-buffer');
   sourcemaps = require('gulp-sourcemaps');
   browserify = require('browserify');
+  ghPages = require('gulp-gh-pages');
 
 var sassPaths = [
   'node_modules/foundation-sites/scss',
@@ -109,6 +110,11 @@ gulp.task('watch', ['serve'], function() {
   gulp.watch('app/**/*.html', ['html']);
   gulp.watch('app/scss/**/*.scss', ['sass:uniprot-style', 'sass:app']);
   gulp.watch('app/scripts/**/*.js', ['js:uniprot-style','js:app']);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+    .pipe(ghPages());
 });
 
 
