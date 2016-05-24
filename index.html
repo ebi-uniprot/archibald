@@ -7,14 +7,19 @@
     <title>UniProt style guide</title>
     <script src="https://use.typekit.net/hfp3dbc.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/uniprot-style.css">
     <link rel="stylesheet" href="css/app.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
   </head>
   <body>
-    <div>
-    <h1>UniProt style guide</h1>
+    <nav class="main-nav">
+        <a href="/" class="logo">UniProt</a>
+        <a href="#/">Style guide</a>
+        <a href="//www.uniprot.org">UniProt website</a>
+        <a href="#/">Documentation</a>
+    </nav>
 
     <div ng-include="'views/pannel.html'" class="left-col"></div>
     <div ng-view class="right-col"></div>
