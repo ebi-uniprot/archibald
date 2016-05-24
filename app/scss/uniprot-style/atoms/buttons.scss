@@ -1,0 +1,20 @@
+.button {
+  display: inline-block;
+  padding:0.85em 1em;
+  color: $colour-white;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 300ms ease-out;
+  cursor: pointer;
+  font-size: .8rem;
+  &-primary {
+    background-color: $colour-uniprot-blue;
+  }
+  &:hover {
+    background-color: $colour-dark-blue;
+  }
+  &.disabled {
+    cursor: default;
+    opacity: .4;
+  }
+}

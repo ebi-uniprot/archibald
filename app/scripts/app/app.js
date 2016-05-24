@@ -17,6 +17,12 @@ app.config(['$routeProvider',
       when('/colours', {
         templateUrl: 'views/atoms/colours.html'
       }).
+      when('/icons', {
+        templateUrl: 'views/atoms/icons.html'
+      }).
+      when('/buttons', {
+        templateUrl: 'views/atoms/buttons.html'
+      }).
       otherwise({
         redirectTo: '/'
       });
