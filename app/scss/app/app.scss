@@ -1,11 +1,10 @@
-$light-grey : #CCC;
-$black: #000;
-$white: #FFF;
+@import "../uniprot-style/uniprot-style";
+
 $small-text: 16px;
 
 .pattern-element {
 	.pattern-element-header {
-		border-bottom: 1px solid $light-grey;
+		border-bottom: 1px solid $colour-light-grey;
 		margin-top: 0;
 	}
 }
@@ -28,9 +27,9 @@ $small-text: 16px;
 }
 
 .code-snippet {
-	background-color: $black;
+	background-color: $colour-black;
 	font-size: $small-text;
-	color:$white;
+	color:$colour-seashell-grey;
 	border-radius: 1em;
 	padding: .5em 1em;
 }
@@ -44,4 +43,70 @@ $small-text: 16px;
 	vertical-align: top;
 	display: inline-block;
 	width: 70%;
+}
+
+.box-colour {
+	vertical-align: top;
+	display: inline-block;;
+	width:100px;
+	height:100px;
+	margin-bottom: 30px;
+	font-size: $font-size-small;
+	&:before {
+		content: attr(data-name);
+		margin-top: 110px;
+		display: block;
+		text-align: center;
+	}
+	// PRIMARY
+	&-dark-blue {
+		background: $colour-dark-blue;
+	}
+	&-uniprot-blue {
+		background: $colour-uniprot-blue;
+	}
+	&-medium-blue {
+		background: $colour-medium-blue;
+	}
+	&-light-blue {
+		background: $colour-light-blue;
+	}
+	// GREY
+	&-black {
+		background: $colour-black;
+	}
+	&-dark-grey {
+		background: $colour-dark-grey;
+	}
+	&-cool-grey {
+		background: $colour-cool-grey;
+	}
+	&-medium-grey {
+		background: $colour-medium-grey;
+	}
+	&-light-grey {
+		background: $colour-light-grey;
+	}
+	&-seashell-grey {
+		background: $colour-seashell-grey;
+	}
+	// NAMESPACE
+	&-uniref {
+		background: $colour-uniref;
+	}
+	&-uniparc {
+		background: $colour-uniparc;
+	}
+	&-proteomes {
+		background: $colour-proteomes;
+	}
+	&-supporting-data {
+		background: $colour-supporting-data;
+	}
+	&-help {
+		background: $colour-help;
+	}
+	&-annotation-systems {
+		background: $colour-annotation-systems;
+	}
 }
