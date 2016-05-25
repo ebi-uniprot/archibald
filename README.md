@@ -1,6 +1,6 @@
 # UniProt style guide
 
-This is the living style guide for the UniProt website. It is based on [Foundation for Sites 6](http://foundation.zurb.com/sites).
+This is the living style guide for the UniProt website.
 
 ## Installation
 
@@ -19,5 +19,5 @@ $ npm install
 The following command runs the server:
 
 ```bash
-$ npm start
+$ gulp watch
 ```
