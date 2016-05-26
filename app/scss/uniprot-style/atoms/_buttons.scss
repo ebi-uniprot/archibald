@@ -1,7 +1,7 @@
 .button {
   display: inline-block;
   padding:0.85em 1em;
-  color: $colour-white;
+  color: $colour-white !important;
   text-align: center;
   text-decoration: none;
   transition: background-color 300ms ease-out;
