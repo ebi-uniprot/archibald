@@ -126,7 +126,9 @@ gulp.task('watch', ['serve'], function() {
 
 gulp.task('deploy', function() {
   return gulp.src('./build/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages({
+      force : true
+    }));
 });
 
 
