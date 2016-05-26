@@ -1,0 +1,12 @@
+.main-nav {
+  // height: 2.5em;
+  line-height: 3.1em;
+  margin: 0;
+  background: $colour-uniprot-blue;
+  a, a:link {
+    display: inline-block;
+    color: $colour-seashell-grey;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,35 @@
+.secondary-nav {
+  background-color: $colour-dark-blue;
+  color: $colour-white;
+  padding: 0 .5em 0; // TODO this should be global?
+  a {
+    color: $colour-seashell-grey;
+    text-decoration: none;
+    transition: background-color 300ms ease-out;
+    &:hover {
+      color: $colour-white;
+      background: $colour-uniprot-blue;
+    }
+    &.active {
+      background: $colour-uniprot-blue;
+    }
+  }
+  h1, h2, h3, h4 {
+    border-bottom: 1px solid $colour-white;
+    padding-bottom: .5em; //TODO use mixin to calculate
+    margin-bottom: .5em;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    ul {
+      list-style: none;
+      margin-bottom: 1.5em;
+      li a {
+        display: block;
+        padding-left: .2em;
+        margin-bottom: .8em;
+      }
+    }
+  }
+}

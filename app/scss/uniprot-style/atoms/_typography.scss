@@ -1,6 +1,6 @@
 $font-family : 'lato', 'Helvetica neue', 'Helvetica', Arial, sans-serif;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$body-font-size : 18px;
+$body-font-size : 16px;
 $font-size-small : 10px;
 
 .sequence-display {
@@ -9,4 +9,11 @@ $font-size-small : 10px;
 
 .small-text {
   font-size: $font-size-small;
+}
+
+a, a:link, a:visited, a:active {
+  color: $colour-uniprot-blue;
+}
+a:hover {
+  color: $colour-dark-blue;  
 }

@@ -6,11 +6,12 @@
   text-decoration: none;
   transition: background-color 300ms ease-out;
   cursor: pointer;
-  font-size: .8rem;
+  font-size: .9rem;
   &-primary {
     background-color: $colour-uniprot-blue;
   }
   &:hover {
+    color: $colour-white;
     background-color: $colour-dark-blue;
   }
   &.disabled {

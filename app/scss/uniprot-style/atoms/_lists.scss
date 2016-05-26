@@ -1,0 +1,10 @@
+.inline-list {
+  margin:0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin:0 .5em;
+  }
+}

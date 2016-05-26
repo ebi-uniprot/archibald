@@ -1,6 +1,13 @@
-@import 'atoms/typography';
 @import 'atoms/colour';
+@import 'atoms/typography';
 @import 'atoms/buttons';
+@import 'atoms/icons';
+@import 'atoms/forms';
+@import 'atoms/tables';
+@import 'atoms/lists';
+
+@import 'organisms/main-nav';
+@import 'organisms/secondary-nav';
 
 html {
   font-family: $font-family;

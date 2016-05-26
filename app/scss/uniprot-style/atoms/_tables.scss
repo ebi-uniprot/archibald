@@ -1,0 +1,21 @@
+$table-padding: 1em;
+.results-table {
+  td,
+  th {
+    padding: 0.5em 1em;
+  }
+  tbody,
+  tfoot,
+  thead {
+    border: 1px solid $colour-light-grey;
+  }
+  thead {
+    background: $colour-uniprot-blue;
+    color: $colour-white;
+  }
+  tr {
+    &:nth-child(even) {
+      background-color: $colour-seashell-grey;
+    }
+  }
+}

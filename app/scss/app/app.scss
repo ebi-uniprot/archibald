@@ -9,23 +9,6 @@ $small-text: 16px;
 	}
 }
 
-.archibald-nav {
-	list-style: none;
-	padding-left: 0;
-	font-size: $small-text;
-	h4 {
-		margin: .2em;
-	}
-	ul {
-		list-style: none;
-		padding-left: .5em;
-		margin-bottom: .5em;
-		li a {
-			display: block;
-		}
-	}
-}
-
 .code-snippet {
 	background-color: $colour-black;
 	font-size: $small-text;
@@ -37,12 +20,13 @@ $small-text: 16px;
 .left-col {
 	vertical-align: top;
 	display: inline-block;
-	width: 20%;
+	width: 15%;
 }
 .right-col {
+	margin-left: .5em;
 	vertical-align: top;
 	display: inline-block;
-	width: 70%;
+	width: 75%;
 }
 
 .box-colour {

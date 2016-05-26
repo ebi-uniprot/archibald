@@ -11,7 +11,8 @@ var gulp = require('gulp'),
   buffer = require('vinyl-buffer');
   sourcemaps = require('gulp-sourcemaps');
   browserify = require('browserify');
-  ghPages = require('gulp-gh-pages');
+  ghPages = require('gulp-gh-pages')
+  imagemin = require('gulp-imagemin');
 
 var sassPaths = [
   'node_modules/foundation-sites/scss',
@@ -50,6 +51,17 @@ gulp.task('sass:uniprot-style', function() {
     .pipe(gulp.dest('build/css/'))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
+});
+
+gulp.task('copy', function() {
+  gulp.src('node_modules/normalize.css/normalize.css')
+      .pipe(gulp.dest('build/css'));
+});
+
+gulp.task('imagemin', function(){
+  gulp.src('app/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('build/images'))
 });
 
 // transpile & move js
@@ -99,7 +111,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('serve', ['sass:uniprot-style', 'sass:app', 'js:uniprot-style',
-'js:app', 'html'], function() {
+'js:app', 'html', 'copy', 'imagemin'], function() {
   browserSync.init({
     server: "./build"
   });
