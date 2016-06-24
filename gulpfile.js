@@ -15,39 +15,37 @@ var gulp = require('gulp'),
   imagemin = require('gulp-imagemin');
 
 var sassPaths = [
-  'node_modules/foundation-sites/scss',
-  'node_modules/motion-ui/src'
+  'bower_components/foundation-sites/scss',
+  'bower_components/motion-ui/src'
 ];
 
 gulp.task('sass:app', function() {
   return gulp.src('app/scss/app/app.scss')
-    .pipe(sourcemaps.init())
     .pipe(sass({
-        errLogToConsole: true
+        includePaths: sassPaths,
+        outputStyle: 'compressed' // if css compressed **file size**
       })
       .on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
-    .pipe(cleanCss())
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/css/'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('sass:uniprot-style', function() {
   return gulp.src('app/scss/uniprot-style/uniprot-style.scss')
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(sass({
         includePaths: sassPaths,
-        errLogToConsole: true
+        outputStyle: 'compressed' // if css compressed **file size**
       })
       .on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
-    .pipe(cleanCss())
-    .pipe(sourcemaps.write())
+    // .pipe(cleanCss())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/css/'))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());

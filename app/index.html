@@ -14,17 +14,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
   </head>
   <body>
-    <nav class="main-nav">
-      <ul class="inline-list">
+    <nav class="main-nav ">
+      <ul class="menu">
         <li><a href="#/" class="logo">UniProt</a></li>
         <li><a href="#/">Style guide</a></li>
         <li><a href="//www.uniprot.org">UniProt website</a></li>
-        <li><a href="#/">Documentation</a></li>        
+        <li><a href="#/">Documentation</a></li>
       </ul>
     </nav>
 
-    <div ng-include="'views/pannel.html'" class="secondary-nav left-col"></div>
-    <div ng-view class="right-col"></div>
+    <div>
+      <div ng-include="'views/pannel.html'" class="secondary-nav small-2 columns"></div>
+      <div ng-view class="small-10 columns"></div>
+    </div>
 
     <script src="scripts/app/app.js"></script>
     <script src="scripts/uniprot-style/uniprot-style.js"></script>

@@ -1,7 +1,6 @@
 .secondary-nav {
   background-color: $colour-dark-blue;
   color: $colour-white;
-  padding: 0 .5em 0; // TODO this should be global?
   a {
     color: $colour-seashell-grey;
     text-decoration: none;
@@ -22,6 +21,7 @@
   ul {
     list-style: none;
     padding-left: 0;
+    margin-left: 0;
     ul {
       list-style: none;
       margin-bottom: 1.5em;

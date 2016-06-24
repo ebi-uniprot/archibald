@@ -1,10 +1,12 @@
-.inline-list {
-  margin:0;
-  padding: 0;
-  list-style: none;
-  li {
-    display: inline-block;
-    vertical-align: middle;
-    margin:0 .5em;
+.attribute-list {
+  .attribute-list-row {
+    padding: .6em;
+    border-top: 1px solid $colour-seashell-grey;
+    .attribute-list-title {
+      vertical-align: top;
+      font-weight: bold;
+    }
+    .attribute-list-content {
+    }
   }
 }

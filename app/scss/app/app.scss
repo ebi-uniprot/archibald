@@ -1,7 +1,5 @@
 @import "../uniprot-style/uniprot-style";
 
-$small-text: 16px;
-
 .pattern-element {
 	.pattern-element-header {
 		border-bottom: 1px solid $colour-light-grey;
@@ -11,34 +9,22 @@ $small-text: 16px;
 
 .code-snippet {
 	background-color: $colour-black;
-	font-size: $small-text;
+	font-size: $small-font-size;
 	color:$colour-seashell-grey;
 	border-radius: 1em;
 	padding: .5em 1em;
 }
 
-.left-col {
-	vertical-align: top;
-	display: inline-block;
-	width: 15%;
-}
-.right-col {
-	margin-left: .5em;
-	vertical-align: top;
-	display: inline-block;
-	width: 75%;
-}
-
 .box-colour {
 	vertical-align: top;
 	display: inline-block;;
-	width:100px;
-	height:100px;
-	margin-bottom: 30px;
-	font-size: $font-size-small;
+	width:9em;
+	height:9em;
+	margin-bottom: 4em;
+	font-size: $small-font-size;
 	&:before {
 		content: attr(data-name);
-		margin-top: 110px;
+		margin-top: 10em;
 		display: block;
 		text-align: center;
 	}

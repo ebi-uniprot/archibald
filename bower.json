@@ -1,0 +1,25 @@
+{
+  "name": "uniprot-style",
+  "description": "UniProt style guide",
+  "main": "gulpfile.js",
+  "authors": [
+    "Xavier Watkins <xwatkins@ebi.ac.uk>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Uniprot",
+    "styleguide"
+  ],
+  "homepage": "https://github.com/ebi-uniprot/uniprot-style",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.2.3",
+    "motion-ui": "^1.2.2"
+  }
+}

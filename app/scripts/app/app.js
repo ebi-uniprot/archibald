@@ -35,6 +35,9 @@ app.config(['$routeProvider',
       when('/icons', {
         templateUrl: 'views/atoms/icons.html'
       }).
+      when('/tiles', {
+        templateUrl: 'views/molecules/tiles.html'
+      }).
       otherwise({
         redirectTo: '/'
       });
