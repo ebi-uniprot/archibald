@@ -7,11 +7,11 @@ var gulp = require('gulp'),
   cleanCss = require('gulp-clean'),
   autoprefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
-  source = require('vinyl-source-stream');
-  buffer = require('vinyl-buffer');
-  sourcemaps = require('gulp-sourcemaps');
-  browserify = require('browserify');
-  ghPages = require('gulp-gh-pages')
+  source = require('vinyl-source-stream'),
+  buffer = require('vinyl-buffer'),
+  sourcemaps = require('gulp-sourcemaps'),
+  browserify = require('browserify'),
+  ghPages = require('gulp-gh-pages'),
   imagemin = require('gulp-imagemin');
 
 var sassPaths = [
@@ -54,6 +54,10 @@ gulp.task('sass:uniprot-style', function() {
 gulp.task('copy', function() {
   gulp.src('node_modules/normalize.css/normalize.css')
       .pipe(gulp.dest('build/css'));
+  gulp.src(['bower_components/jquery/dist/jquery.min.js',
+            'bower_components/foundation-sites/dist/foundation.min.js',
+            'app/scripts/vendor/**/*.js'])
+      .pipe(gulp.dest('build/scripts/uniprot-style'));
 });
 
 gulp.task('imagemin', function(){
