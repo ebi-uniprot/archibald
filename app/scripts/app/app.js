@@ -8,9 +8,6 @@ var app = angular.module('archibald', ['ngRoute']);
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-    when('/', {
-      templateUrl: 'views/welcome.html'
-    }).
     when('/typography', {
       templateUrl: 'views/atoms/typography.html'
     }).
@@ -45,7 +42,7 @@ app.config(['$routeProvider',
       templateUrl: 'views/molecules/magellan.html'
     }).
     otherwise({
-      redirectTo: '/'
+      templateUrl: 'views/atoms/typography.html'
     });
   }
 ]);
