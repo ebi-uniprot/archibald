@@ -3,6 +3,8 @@ $hover-lightness-value: -15%;
 .tile {
   background-color: $colour-uniprot-blue;
   display: inline-block;
+  float: left;
+  margin: .1em;
   text-align: center;
   color: $colour-white;
   width: 10em;
