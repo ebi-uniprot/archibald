@@ -1,12 +1,11 @@
-.main-nav {
-  padding: .4em;
-  line-height: 3.1em;
-  margin: 0;
-  background: $colour-uniprot-blue;
+$hover-lightness-value: -15%;
+
+.top-bar {
   a, a:link {
-    display: inline-block;
-    color: $colour-seashell-grey;
-    text-decoration: none;
-    cursor: pointer;
+    color: $colour-seashell-grey !important;
+    transition: color 0.25s ease-out;
+  }
+  a:hover {
+    color: scale-color($colour-seashell-grey, $lightness: $hover-lightness-value) !important;
   }
 }
