@@ -52,18 +52,27 @@ gulp.task('sass:uniprot-style', function() {
 });
 
 gulp.task('copy', function() {
-  gulp.src('node_modules/normalize.css/normalize.css')
+  gulp.src(['node_modules/normalize.css/normalize.css',
+            'node_modules/font-awesome/css/font-awesome.css'])
       .pipe(gulp.dest('build/css'));
   gulp.src(['bower_components/jquery/dist/jquery.min.js',
             'bower_components/foundation-sites/dist/foundation.min.js',
             'app/scripts/vendor/**/*.js'])
       .pipe(gulp.dest('build/scripts/uniprot-style'));
+  gulp.src('node_modules/font-awesome/fonts/**.*')
+      .pipe(gulp.dest('build/fonts'));
 });
 
 gulp.task('imagemin', function(){
   gulp.src('app/images/*')
         .pipe(imagemin())
         .pipe(gulp.dest('build/images'))
+});
+
+gulp.task('svgmin', function(){
+  gulp.src('app/svg/*.svg')
+    .pipe(imagemin())
+    .pipe(gulp.dest('build/svg'));
 });
 
 // transpile & move js
@@ -113,7 +122,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('serve', ['sass:uniprot-style', 'sass:app', 'js:uniprot-style',
-'js:app', 'html', 'copy', 'imagemin'], function() {
+'js:app', 'html', 'copy', 'imagemin', 'svgmin'], function() {
   browserSync.init({
     server: "./build"
   });

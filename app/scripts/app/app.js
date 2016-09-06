@@ -41,6 +41,9 @@ app.config(['$routeProvider',
     when('/magellan', {
       templateUrl: 'views/molecules/magellan.html'
     }).
+    when('/intro', {
+      templateUrl: 'views/molecules/intro.html'
+    }).
     otherwise({
       templateUrl: 'views/atoms/typography.html'
     });
@@ -52,6 +55,7 @@ app.run(['$rootScope', '$timeout', function($rootScope, $timeout) {
   $rootScope.$on('$routeChangeSuccess', function() {
     angular.element(document).ready(function() {
       $(document).foundation();
+      $(document).uniprotStyle();
     });
   });
 }]);

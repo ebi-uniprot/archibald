@@ -1,0 +1,16 @@
+.intro {
+  padding: $global-padding;
+  .intro-content {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  }
+  .intro-links {
+    text-align: right;
+  }
+}
+
+.icon {
+  width:12em;
+  fill: yellow;
+}
