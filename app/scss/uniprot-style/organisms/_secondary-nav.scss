@@ -1,34 +1,57 @@
+$filter-tab-radius:.2em;
+
 .secondary-nav {
   background-color: $colour-dark-blue;
   color: $colour-white;
-  a {
-    color: $colour-seashell-grey;
-    text-decoration: none;
-    transition: background-color 300ms ease-out;
-    &:hover {
-      color: $colour-white;
-      background: $colour-uniprot-blue;
-    }
-    &.active {
-      background: $colour-uniprot-blue;
-    }
-  }
+
+
   h1, h2, h3, h4 {
     border-bottom: 1px solid $colour-white;
-    padding-bottom: .5em; //TODO use mixin to calculate
+    padding-bottom: .2em; //TODO use mixin to calculate
     margin-bottom: .5em;
+    margin-top: .5em;
   }
+
+  a {
+    color: $colour-seashell-grey;
+    &:hover {
+      color: $colour-white;
+    }
+  }
+
   ul {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
-    ul {
-      list-style: none;
-      margin-bottom: 1.5em;
-      li a {
+    margin-bottom: 1.5em;
+
+    li {
+      a {
+        border-radius: $filter-tab-radius;
         display: block;
-        padding-left: .2em;
+        padding-left: 1.5em;
         margin-bottom: .8em;
+        text-decoration: none;
+        transition: background-color 300ms ease-out;
+        &:hover {
+          background: $colour-uniprot-blue;
+        }
+      }
+      &.active {
+        a {
+          color: $colour-black;
+          background: $colour-seashell-grey;
+          &:before {
+            display: inline;
+            position: absolute;
+            margin-left: -1em;
+            font-family: FontAwesome;
+            content:'';
+          }
+          &:hover {
+            opacity: .9;
+          }
+        }
       }
     }
   }
