@@ -33,8 +33,8 @@ gulp.task('sass:app', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('sass:uniprot-style', function() {
-  return gulp.src('app/scss/uniprot-style/uniprot-style.scss')
+gulp.task('sass:archibald-style', function() {
+  return gulp.src('app/scss/archibald/archibald-style.scss')
     // .pipe(sourcemaps.init())
     .pipe(sass({
         includePaths: sassPaths,
@@ -58,7 +58,7 @@ gulp.task('copy', function() {
   gulp.src(['bower_components/jquery/dist/jquery.min.js',
             'bower_components/foundation-sites/dist/foundation.min.js',
             'app/scripts/vendor/**/*.js'])
-      .pipe(gulp.dest('build/scripts/uniprot-style'));
+      .pipe(gulp.dest('build/scripts/archibald'));
   gulp.src('node_modules/font-awesome/fonts/**.*')
       .pipe(gulp.dest('build/fonts'));
 });
@@ -95,15 +95,15 @@ gulp.task('js:app', function() {
     }));
 });
 
-gulp.task('js:uniprot-style', function() {
-  return gulp.src('app/scripts/uniprot-style/**/*.js')
+gulp.task('js:archibald-style', function() {
+  return gulp.src('app/scripts/archibald/**/*.js')
     .pipe(sourcemaps.init())
-    .pipe(concat('uniprot-style.js'))
+    .pipe(concat('archibald-style.js'))
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build/scripts/uniprot-style'))
+    .pipe(gulp.dest('build/scripts/archibald-style'))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.reload({
       stream: true,
@@ -121,7 +121,7 @@ gulp.task('html', function() {
     }));
 });
 
-gulp.task('serve', ['sass:uniprot-style', 'sass:app', 'js:uniprot-style',
+gulp.task('serve', ['sass:archibald-style', 'sass:app', 'js:archibald-style',
 'js:app', 'html', 'copy', 'imagemin', 'svgmin'], function() {
   browserSync.init({
     server: "./build"
@@ -131,8 +131,8 @@ gulp.task('serve', ['sass:uniprot-style', 'sass:app', 'js:uniprot-style',
 gulp.task('watch', ['serve'], function() {
   // watch for changes
   gulp.watch('app/**/*.html', ['html']);
-  gulp.watch('app/scss/**/*.scss', ['sass:uniprot-style', 'sass:app']);
-  gulp.watch('app/scripts/**/*.js', ['js:uniprot-style','js:app']);
+  gulp.watch('app/scss/**/*.scss', ['sass:archibald-style', 'sass:app']);
+  gulp.watch('app/scripts/**/*.js', ['js:archibald-style','js:app']);
 });
 
 gulp.task('deploy', function() {
