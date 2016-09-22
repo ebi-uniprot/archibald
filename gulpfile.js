@@ -1,6 +1,8 @@
 var gulp = require('gulp'),
   browserSync = require('browser-sync'),
+  file = require('gulp-file'),
   concat = require('gulp-concat'),
+  insert = require('gulp-insert'),
   uglify = require('gulp-uglify'),
   jshint = require('gulp-jshint'),
   stylish = require('jshint-stylish'),
@@ -12,7 +14,8 @@ var gulp = require('gulp'),
   sourcemaps = require('gulp-sourcemaps'),
   browserify = require('browserify'),
   ghPages = require('gulp-gh-pages'),
-  imagemin = require('gulp-imagemin');
+  imagemin = require('gulp-imagemin'),
+  argv = require('yargs').argv;
 
 var sassPaths = [
   'bower_components/foundation-sites/scss',
@@ -140,6 +143,20 @@ gulp.task('deploy', function() {
     .pipe(ghPages({
       force : true
     }));
+});
+
+gulp.task('create', function() {
+  var name = argv.pattern;
+  console.log('Creating pattern "' + name + '"');
+  file('_' + name + '.scss', '', { src: true })
+    .pipe(gulp.dest('app/scss/archibald/molecules/'));
+  console.log('SCSS created');
+  file(name + '.html', '<div class=\"pattern-element\"><h2 class=\"pattern-element-header\">' + name + '</h2></div>', { src: true })
+    .pipe(gulp.dest('app/views/molecules/'));
+  console.log('html created');
+  gulp.src('app/scss/archibald/archibald-style.scss')
+      .pipe(insert.append('@import \'molecules/' + name + '\';'))
+      .pipe(gulp.dest('app/scss/archibald/'));
 });
 
 
